@@ -76,6 +76,8 @@ Text("Result: $result")
 
 Create a multi-screen Android application implementing Jetpack's Navigation component with Compose to handle routing between screens, manage the back stack, and pass data between destinations.
 
+![ex2](./img/ex2.png)
+
 ### Requirements
 
 1 - Create a new Android project with Empty Compose Activity template
