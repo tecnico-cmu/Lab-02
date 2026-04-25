@@ -84,14 +84,17 @@ Create a multi-screen Android application implementing Jetpack's Navigation comp
 2 - Add the following dependencies to your app-level build.gradle file:
 
 ```kotlin
-  val nav_version = "2.8.9"
+  val navVersion = "2.9.8"
 
   // Jetpack Compose integration
-  implementation("androidx.navigation:navigation-compose:$nav_version")
+  implementation("androidx.navigation:navigation-compose:$navVersion")
 
   // Views/Fragments integration
-  implementation("androidx.navigation:navigation-fragment:$nav_version")
-  implementation("androidx.navigation:navigation-ui:$nav_version")
+  implementation("androidx.navigation:navigation-fragment:$navVersion")
+  implementation("androidx.navigation:navigation-ui:$navVersion")
+
+  // Material UI Extended Icons
+  implementation("androidx.compose.material:material-icons-extended")
 ```
 
 3 - Create Activities Composables
@@ -253,7 +256,7 @@ fun DetailScreen(
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
                         Icon(
-                            imageVector = Icons.Default.ArrowBack,
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Back"
                         )
                     }
@@ -281,7 +284,7 @@ fun SettingsScreen(
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
                         Icon(
-                            imageVector = Icons.Default.ArrowBack,
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Back"
                         )
                     }
@@ -392,42 +395,43 @@ Open your app-level `build.gradle` file and add the following dependencies:
 ```kotlin
 
 dependencies {
-    val lifecycle_version = "2.8.7"
-    val arch_version = "2.2.0"
+    val lifecycleVersion = "2.10.0"
+    val archVersion = "2.2.0"
 
     // ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
     // ViewModel utilities for Compose
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
     // LiveData
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
     // Lifecycles only (without ViewModel or LiveData)
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     // Lifecycle utilities for Compose
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:$lifecycleVersion")
 
     // Saved state module for ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion")
 
     // alternately - if using Java8, use the following instead of lifecycle-compiler
-    implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion")
 
     // optional - helpers for implementing LifecycleOwner in a Service
-    implementation("androidx.lifecycle:lifecycle-service:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-service:$lifecycleVersion")
 
     // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
-    implementation("androidx.lifecycle:lifecycle-process:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-process:$lifecycleVersion")
 
     // optional - ReactiveStreams support for LiveData
-    implementation("androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycleVersion")
 
     // optional - Test helpers for LiveData
-    testImplementation("androidx.arch.core:core-testing:$arch_version")
+    testImplementation("androidx.arch.core:core-testing:$archVersion")
 
     // optional - Test helpers for Lifecycle runtime
-    testImplementation ("androidx.lifecycle:lifecycle-runtime-testing:$lifecycle_version")
+    testImplementation ("androidx.lifecycle:lifecycle-runtime-testing:$lifecycleVersion")
 
-
+    // Material UI Extended Icons
+    implementation("androidx.compose.material:material-icons-extended")
     ...
 
     
@@ -757,7 +761,7 @@ fun NotesScreen(
                 onSaveClick = viewModel::saveNote
             )
             
-            Divider(modifier = Modifier.padding(horizontal = 16.dp))
+            HorizontalDivider(modifier = Modifier.padding(horizontal = 16.dp))
             
             LazyColumn(
                 contentPadding = PaddingValues(vertical = 8.dp)
