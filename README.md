@@ -215,6 +215,7 @@ Update Screen Composables to Handle Navigation
 Modify your HomeScreen to include navigation callbacks:
 
 ```kotlin
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     onItemClick: (Int) -> Unit,
@@ -244,6 +245,7 @@ fun HomeScreen(
 Update DetailScreen to include navigation parameters:
 
 ```kotlin
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailScreen(
     itemId: Int,
@@ -272,6 +274,7 @@ fun DetailScreen(
 Update SettingsScreen with navigation callbacks:
 
 ```kotlin
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(
     onBackClick: () -> Unit,
