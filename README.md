@@ -81,6 +81,7 @@ Create a multi-screen Android application implementing Jetpack's Navigation comp
 ### Requirements
 
 1 - Create a new Android project with Empty Compose Activity template
+
 2 - Add the following dependencies to your app-level build.gradle file:
 
 ```kotlin
