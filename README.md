@@ -1,7 +1,7 @@
 
 # Mobile and Ubiquitous Computing
 
-## MEIC/METI 2024/2025
+## MEIC/METI 2025/2026
 
 # Lab Guide 2
 
